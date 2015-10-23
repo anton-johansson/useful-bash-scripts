@@ -1,0 +1,6 @@
+#!/bin/bash
+
+file1="$PWD/$1"
+file2="$(echo $file1 | sed -r 's/\/Dev\//\/Stable\//g')"
+
+meld $file1 $file2
