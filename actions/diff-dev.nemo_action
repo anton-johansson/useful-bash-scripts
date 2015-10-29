@@ -1,0 +1,8 @@
+[Nemo Action]
+Active=true
+Name=Diff against Dev
+Comment=Compares the file to the development version
+Exec=diff-dev %F
+Icon-Name=meld
+Selection=s
+Extensions=any

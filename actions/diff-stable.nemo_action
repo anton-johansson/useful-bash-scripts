@@ -1,0 +1,8 @@
+[Nemo Action]
+Active=true
+Name=Diff against Stable
+Comment=Compares the file to the stable version
+Exec=diff-stable %F
+Icon-Name=meld
+Selection=s
+Extensions=any
