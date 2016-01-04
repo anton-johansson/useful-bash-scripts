@@ -11,6 +11,10 @@ cd ~/Projects
 git clone git@github.com:anton-johansson/useful-bash-scripts.git
 sudo ln -s /home/<username>/Projects/useful-bash-scripts/diff-dev /usr/local/bin/diff-dev
 sudo ln -s /home/<username>/Projects/useful-bash-scripts/diff-stable /usr/local/bin/diff-stable
+sudo ln -s /home/<username>/Projects/useful-bash-scripts/textexists /usr/local/bin/textexists
+sudo ln -s /home/<username>/Projects/useful-bash-scripts/mark-for-comparison /usr/local/bin/mark-for-comparison
+sudo ln -s /home/<username>/Projects/useful-bash-scripts/compare-with-marked /usr/local/bin/compare-with-marked
+sudo ln -s /home/<username>/Projects/useful-bash-scripts/is-marked /usr/local/bin/is-marked
 ```
 
 #### Nemo actions
@@ -27,5 +31,8 @@ diff-stable some-file.txt
 
 cd ~/Projects/TestProject/Stable
 diff-dev some-file.txt
-```
 
+cd ~/Projects/TestProject/Dev
+mark-for-comparison file1.txt
+compare-with-marked file2.txt
+```

@@ -1,0 +1,11 @@
+#!/bin/bash
+#
+# Compares the input file with the marked file, using meld.
+#
+
+file1="$1"
+file2="$(cat ~/.mark-for-comparison)"
+
+rm ~/.mark-for-comparison
+
+meld $file1 $file2

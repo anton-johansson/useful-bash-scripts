@@ -1,0 +1,6 @@
+#!/bin/bash
+#
+# Marks the input file for comparison.
+#
+
+echo $1 > ~/.mark-for-comparison

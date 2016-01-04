@@ -1,0 +1,14 @@
+#!/bin/bash
+#
+# Checks if a file is marked for comparison.
+#
+# If the argument is 1, the script will output true if a file is marked.
+# If the argument is 0, the script will output true if a file is not marked.
+
+if [ "$1" == "1" ] && [ -f ~/.mark-for-comparison ]; then
+	echo -n 'true'
+fi
+
+if [ "$1" == "0" ] && [ ! -f ~/.mark-for-comparison ]; then
+	echo -n 'true'
+fi

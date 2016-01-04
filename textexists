@@ -1,0 +1,4 @@
+#!/bin/bash
+# textexists
+
+echo "$1" | egrep -q -h $2 && echo -n 'true'
