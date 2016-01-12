@@ -15,6 +15,7 @@ sudo ln -s ~/Projects/useful-bash-scripts/textexists /usr/local/bin/textexists
 sudo ln -s ~/Projects/useful-bash-scripts/mark-for-comparison /usr/local/bin/mark-for-comparison
 sudo ln -s ~/Projects/useful-bash-scripts/compare-with-marked /usr/local/bin/compare-with-marked
 sudo ln -s ~/Projects/useful-bash-scripts/is-marked /usr/local/bin/is-marked
+sudo ln -s ~/Projects/useful-bash-scripts/copy-to-dbupdate /usr/local/bin/copy-to-dbupdate
 ```
 
 #### Nemo actions

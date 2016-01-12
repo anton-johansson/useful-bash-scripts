@@ -1,0 +1,43 @@
+#!/bin/bash
+#
+# Script that is used to copy an SQL file to the DBUpdate repository.
+#
+
+# Variables
+file="$1"
+dev=false
+stable=false
+
+# Error checks
+if [[ ! -f $file ]]; then
+	echo "Not a file..."
+	exit 1
+fi
+if [[ ! "$file" =~ \.sql$ ]]; then
+	echo "Not an SQL file..."
+	exit 1
+fi
+
+# Check which branch(es) to push to
+if [[ $file == *"/Dev/"* ]] || [[ $file == *"/Main/"* ]]; then
+	dev=true
+elif [[ $file == *"/Stable/"* ]] || [[ $file == *"/Releases/2.6/2.6.x/"* ]]; then
+	stable=true
+elif [[ $file == *"/Viskan/Kod/"* ]]; then
+	dev=true
+	stable=true
+else
+	echo "Not a proper ETM code tree..."
+	exit 1
+fi
+
+# Copy the file to ETM Development
+if $dev; then
+	cp $file "$HOME/Projects/DBUpdate/Main/Repository/Ramos Main/StoredProcedures/$(basename $file)"
+fi
+
+# Copy the file to ETM Stable
+if $stable; then
+	cp $file "$HOME/Projects/DBUpdate/Main/Repository/Ramos 2.6/StoredProcedures/$(basename $file)"
+fi
+
