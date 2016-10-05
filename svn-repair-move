@@ -1,0 +1,4 @@
+#!/bin/bash
+
+mv $2 $1
+svn mv $1 $2
