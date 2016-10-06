@@ -1,8 +1,8 @@
 #!/bin/bash
-# title:	svn-repair-move
-# description:	Performs an SVN repair move
-# parameter #1:	source file
-# parameter #2: target file
+# title:            svn-repair-move
+# description:      Performs an SVN repair move
+# parameter #1:     source file
+# parameter #2:     target file
 
 # Variables
 source="$1"
