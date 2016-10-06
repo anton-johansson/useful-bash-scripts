@@ -1,4 +1,24 @@
 #!/bin/bash
+# title:	svn-repair-move
+# description:	Performs an SVN repair move
+# parameter #1:	source file
+# parameter #2: target file
 
-mv $2 $1
-svn mv $1 $2
+# Variables
+source="$1"
+target="$2"
+
+# Error checks
+if [[ ! -f $source ]]; then
+    echo "Source must be a file..."
+    exit 1
+fi
+
+if [[ ! -f $target ]]; then
+    echo "Target must be a file..."
+    exit 1
+fi
+
+# Execution
+mv $target $source
+svn mv $source $target
