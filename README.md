@@ -18,7 +18,15 @@ sudo ln -s ~/Projects/useful-bash-scripts/is-marked /usr/local/bin/is-marked
 sudo ln -s ~/Projects/useful-bash-scripts/copy-to-dbupdate /usr/local/bin/copy-to-dbupdate
 ```
 
+#### Aliases
+
+Add the following line to the end of your `~/.bashrc`:
+```sh
+source ~/Projects/useful-bash-scripts/aliases.sh
+```
+
 #### Nemo actions
+
 ```
 sudo ln -s ~/Projects/useful-bash-scripts/actions/diff-dev.nemo_action /usr/share/nemo/actions/diff-dev.nemo_action
 sudo ln -s ~/Projects/useful-bash-scripts/actions/diff-stable.nemo_action /usr/share/nemo/actions/diff-stable.nemo_action
@@ -27,6 +35,9 @@ sudo ln -s ~/Projects/useful-bash-scripts/actions/diff-stable.nemo_action /usr/s
 ## Usage
 
 ```
+cd-dev [directory]
+cd-stable [directory]
+
 cd ~/Projects/TestProject/Dev
 diff-stable some-file.txt
 
