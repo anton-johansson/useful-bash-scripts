@@ -4,7 +4,7 @@
 #
 
 # Variables
-file="$1"
+file="$(realpath $1)"
 dev=false
 stable=false
 
@@ -33,11 +33,11 @@ fi
 
 # Copy the file to ETM Development
 if $dev; then
-	cp $file "$HOME/Projects/DBUpdate/Main/Repository/Ramos Main/StoredProcedures/$(basename $file)"
+	cp $file "$HOME/Projects/DBUpdate/Ramos Main/StoredProcedures/$(basename $file)"
 fi
 
 # Copy the file to ETM Stable
 if $stable; then
-	cp $file "$HOME/Projects/DBUpdate/Main/Repository/Ramos 2.6/StoredProcedures/$(basename $file)"
+	cp $file "$HOME/Projects/DBUpdate/Ramos 2.6/StoredProcedures/$(basename $file)"
 fi
 
