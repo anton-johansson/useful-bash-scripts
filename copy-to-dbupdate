@@ -18,6 +18,11 @@ if [[ ! "$file" =~ \.sql$ ]]; then
 	exit 1
 fi
 
+# Full dbupdate checkout out or partial?
+if [[ -d $HOME/Projects/DBUpdate/Main ]]; then
+    fullcheckout=/Main/Repository
+fi
+
 # Check which branch(es) to push to
 if [[ $file == *"/Dev/"* ]] || [[ $file == *"/Main/"* ]]; then
 	dev=true
@@ -31,13 +36,28 @@ else
 	exit 1
 fi
 
+type=StoredProcedures
+parent=`dirname $file`
+parent=`basename $parent`
+
+shopt -s nocasematch
+if [[ "$parent" =~ "tables" ]]; then
+    type=Structure
+fi
+
+if [[ "$parent" =~ "(reports|develop)" ]]; then
+    type=Scripts
+fi
+
 # Copy the file to ETM Development
 if $dev; then
-	cp $file "$HOME/Projects/DBUpdate/Ramos Main/StoredProcedures/$(basename $file)"
+	cp $file "$HOME/Projects/DBUpdate$fullcheckout/Ramos Main/$type/$(basename $file)"
 fi
 
 # Copy the file to ETM Stable
 if $stable; then
-	cp $file "$HOME/Projects/DBUpdate/Ramos 2.6/StoredProcedures/$(basename $file)"
+	cp $file "$HOME/Projects/DBUpdate$fullcheckout/Ramos 2.6/$type/$(basename $file)"
 fi
+
+svn status $HOME/Projects/DBUpdate$fullcheckout
 
