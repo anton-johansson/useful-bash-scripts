@@ -1,0 +1,5 @@
+#!/bin/bash
+
+svn diff >~/temp/diff.txt -x --context=30
+kompare ~/temp/diff.txt
+
