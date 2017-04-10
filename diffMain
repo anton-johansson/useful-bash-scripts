@@ -1,0 +1,20 @@
+#!/bin/bash
+
+cd ~/Projects/Ramos/Releases/2.6/2.6.x
+rm ~/temp/diff.txt
+for i in `svn st | cut -c8- | grep -v ^D`
+do
+	if [[ -f $i ]]; then
+		#echo $i
+		diff --context=30  ../../../Main/$i $i >> ~/temp/diff.txt 
+		if [ "$?" -eq "0" ]
+		then
+			echo No diff in $i
+		fi
+
+	fi
+done
+read -n1 -r -p "Press any key to continue..." key
+
+kompare ~/temp/diff.txt
+
