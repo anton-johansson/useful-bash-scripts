@@ -17,7 +17,7 @@ Then, configure the email to a dummy-email (must be the exact same as below):
 $ git config --global user.email 'not-configured'
 ```
 
-Then, create a [`pre-commit`](pre-commit) hook (`~/.git/templates/hooks/pre-commit`) and make it executable:
+Then, create a [`pre-commit`](pre-commit) hook (`~/.git_template/hooks/pre-commit`) and make it executable:
 ```sh
 $ chmod +x ~/.git_template/hooks/pre-commit
 ```
