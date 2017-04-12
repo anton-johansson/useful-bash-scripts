@@ -2,18 +2,26 @@
 #
 # A git hook to make sure user.email exists before committing
 
+EMAIL_PERSONAL="antoon.johansson@gmail.com"
+EMAIL_WORK="anton.johansson@workplace.com"
+
+ORIGIN_PERSONAL="github.com"
+ORIGIN_WORK="git.workplace.com"
+
 EMAIL=$(git config user.email)
 ORIGIN=$(git config remote.origin.url)
 
 if [ "$EMAIL" = "not-configured" ]; then
-    if [[ "$ORIGIN"  == *"github.com"* ]]; then
-        git config user.email antoon.johansson@gmail.com
-    elif [[ "$ORIGIN" == *"git.workplace.com"* ]]; then
-        git config user.email anton.johansson@workspace.com
+    if [[ "$ORIGIN"  == *"$ORIGIN_PERSONAL"* ]]; then
+        echo "Setting 'user.email' to '$EMAIL_PERSONAL'"
+        git config user.email $EMAIL_PERSONAL
+    elif [[ "$ORIGIN" == *"$ORIGIN_WORK"* ]]; then
+        echo "Setting 'user.email' to '$EMAIL_WORK'"
+        git config user.email $EMAIL_WORK
     else
         echo "Aborting commit because 'user.email' is missing. Run one of the following:"
-        echo " git config user.email antoon.johansson@gmail.com"
-        echo " git config user.email anton.johansson@workplace.com"
+        echo " git config user.email $EMAIL_PERSONAL"
+        echo " git config user.email $EMAIL_WORK"
         exit 1
     fi
 fi
