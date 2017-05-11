@@ -16,6 +16,7 @@ sudo ln -s ~/Projects/useful-bash-scripts/mark-for-comparison /usr/local/bin/mar
 sudo ln -s ~/Projects/useful-bash-scripts/compare-with-marked /usr/local/bin/compare-with-marked
 sudo ln -s ~/Projects/useful-bash-scripts/is-marked /usr/local/bin/is-marked
 sudo ln -s ~/Projects/useful-bash-scripts/copy-to-dbupdate /usr/local/bin/copy-to-dbupdate
+sudo ln -s ~/Projects/useful-bash-scripts/svn-repair-move /usr/local/bin/svn-repair-move
 ```
 
 #### Aliases
